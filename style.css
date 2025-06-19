@@ -69,6 +69,8 @@ body {
 header {
     padding: 2.5rem 1rem;
     text-align: center;
+    margin: 0 auto;
+    max-width: 840px;
 }
 .theme-toggle {
     background-color: white;
