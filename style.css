@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to bottom right, #fbf0fa, #c3a0ed);
+    color: #1a1a1a;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 18px;
+}
+header {
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+h1 {
+    color: #300065;
+    font-size: 3.25rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #300065;
+}
+main {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 2rem
+}
+section {
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+section:nth-child(n+1) { animation-delay: 0.1s; }
+section:nth-child(n+2) { animation-delay: 0.2s; }
+section:nth-child(n+3) { animation-delay: 0.3s; }
+section:nth-child(n+4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ul {
+    list-style: none; /* отключаем стандартные маркеры */
+    padding-left: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+ul li {
+    position: relative;
+    padding-left: 2rem; /* место для кружочка */
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+}
+
+.skills-list li::before, .projects-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.9em;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8f38ff, #3870ff);
+    box-shadow:
+            0 0 6px rgba(143, 56, 255, 0.5),
+            0 0 8px rgba(56, 112, 255, 0.6);
+    transform: translateY(-50%);
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin-top: 1rem;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 9999px;
+    user-select: none;
+    transition: background 0.3s ease;
+    border: 1px solid #8f38ff;
+    color: #746b78;
+    margin-bottom: 0;
+}
+
+.skill-tag a {
+    color: #ffe;
+    text-decoration: underline;
+}
+
+.skill-tag a:hover,
+.skill-tag a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .skill-tag {
+        font-size: 0.9rem;
+        padding: 0.35rem 0.9rem;
+    }
+}
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #5e506a;
+}
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 2.75rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    ul {
+        font-size: 1rem;
+    }
+}
+
+a {
+    background: linear-gradient(90deg, #8f38ff, #3870ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+a:focus {
+    outline: 2px solid #3f018c;
+}
+.photo {
+    border-radius: 100%;
+    border:4px solid white;
+    box-shadow: 0 4px 8px 0 rgba(192, 147, 255, 0.34), 0 6px 20px 0 rgba(192, 147, 255, 0.34);
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(90deg, #8f38ff, #3870ff);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(143, 56, 255, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-button svg {
+    flex-shrink: 0;
+    fill: currentColor;
+}
+
+.footer-button:hover,
+.footer-button:focus {
+    background: linear-gradient(90deg, #3870ff, #8f38ff);
+    box-shadow: 0 6px 12px rgba(56, 112, 255, 0.6);
+    outline: none;
+}
+
+@media (max-width: 400px) {
+    .footer-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
